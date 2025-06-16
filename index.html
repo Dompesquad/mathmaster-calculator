@@ -3,21 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MathMaster Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.1/math.min.js"></script>
+  <title>MathMaster Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>🧮 MathMaster</h1>
-    <p>Kalkulator Matematika Lengkap dari Dasar hingga Tingkat Lanjut</p>
-    <textarea id="input" placeholder="Masukkan soal matematika, contoh: 2x + 3 = 7 atau integral(x^2, x)"></textarea>
+    <h1>🧮 MathMaster Pro</h1>
+    <textarea id="input" placeholder="Masukkan soal atau rumus..."></textarea>
     <div class="buttons">
       <button onclick="calculate()">Hitung</button>
-      <button onclick="exportToPDF()">Ekspor ke PDF</button>
+      <button onclick="exportToPDF()">📄 PDF</button>
+      <button onclick="startVoice()">🎤 Suara</button>
+    </div>
+    <div id="symbol-buttons">
+      <button onclick="insertSymbol('^')">^</button>
+      <button onclick="insertSymbol('sqrt()')">√</button>
+      <button onclick="insertSymbol('%')">%</button>
+      <button onclick="insertSymbol('mod')">mod</button>
+      <button onclick="insertSymbol('!')">n!</button>
+      <button onclick="insertSymbol('combinations(,)')">C(n,r)</button>
+      <button onclick="insertSymbol('permutations(,)')">P(n,r)</button>
+      <button onclick="insertSymbol('derivative(,)')">d/dx</button>
+      <button onclick="insertSymbol('limit(,)')">limit</button>
     </div>
     <div id="result"></div>
+    <div id="steps"></div>
+    <h3>Histori Perhitungan</h3>
+    <ul id="history"></ul>
   </div>
   <script src="script.js"></script>
 </body>
